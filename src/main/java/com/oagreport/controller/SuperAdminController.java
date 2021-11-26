@@ -48,7 +48,7 @@ public class SuperAdminController {
 	@PostMapping("/signup")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest, Principal principal) {
 		String username= principal.getName();
-		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
+		if (userRepository.existsByUsername(signUpRequest.getUserName())) {
 			return ResponseEntity
 					.badRequest()
 					.body(new MessageResponse("Error: Username is already taken!"));
@@ -63,7 +63,7 @@ public class SuperAdminController {
 
 		User user =new User();
 		Set<Role> roles = new HashSet<>();
-		user.setUsername(signUpRequest.getUsername());
+		user.setUsername(signUpRequest.getUserName());
 		user.setEmail(signUpRequest.getEmail());
 		user.setPhoneNo(signUpRequest.getPhoneNo());
 		user.setPassword(encoder.encode(signUpRequest.getPassword()));

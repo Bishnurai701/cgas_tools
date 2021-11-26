@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.oagreport.datatablesrepository.AccountHeadMiscRepository;
 import com.oagreport.datatablesrepository.JvViewTreasuryRepository;
+import com.oagreport.datatablesrepository.LedgerTypeRepository;
 import com.oagreport.domain.AccountDto;
 import com.oagreport.domain.AgencyRequestDto;
 import com.oagreport.domain.MiscAccount;
@@ -49,8 +50,9 @@ public class JvTreasuryService {
 	@Autowired
     private PaymentTypeService paymentTypeService;
 
+	final AccountPayeeService payeeService;
 	final JvViewTreasuryRepository jvViewRepository;
-	
+	final LedgerTypeRepository ledgerTypeRepository;
     final VoucherTypeService voucherTypeService;
     final VoucherSubTypeService voucherSubTypeService;
     final AccountHeadTreasuryService accountHeadService;
@@ -71,8 +73,10 @@ public class JvTreasuryService {
     @PersistenceContext
     private EntityManager em;
 
-    public JvTreasuryService(PaymentTypeService paymentTypeService, DataSource dataSource, VoucherTypeService voucherTypeService, VoucherSubTypeService voucherSubTypeService, AccountHeadTreasuryService accountHeadService, ModelMapper modelMapper, AmountTypeService amountTypeService,AdvanceTypeService advanceTypeService, AuthorizationService authorizationService, JvViewTreasuryRepository jvViewRepository) {
-        this.paymentTypeService = paymentTypeService;
+    public JvTreasuryService(LedgerTypeRepository ledgerTypeRepository,AccountPayeeService payeeService,PaymentTypeService paymentTypeService, DataSource dataSource, VoucherTypeService voucherTypeService, VoucherSubTypeService voucherSubTypeService, AccountHeadTreasuryService accountHeadService, ModelMapper modelMapper, AmountTypeService amountTypeService,AdvanceTypeService advanceTypeService, AuthorizationService authorizationService, JvViewTreasuryRepository jvViewRepository) {
+        this.ledgerTypeRepository = ledgerTypeRepository;
+    	this.payeeService =payeeService;
+    	this.paymentTypeService = paymentTypeService;
 		this.jvViewRepository = jvViewRepository;
         this.dataSource = dataSource;
         this.voucherTypeService = voucherTypeService;
@@ -145,6 +149,27 @@ public class JvTreasuryService {
 	  
 	  public Iterable<TmsJVView> FindAll(){ Iterable<TmsJVView> data =
 	  jvViewRepository.findAll(); return data; }
+	  
+	  
+	  
+	    public ServiceResponse getPayee(AgencyRequestDto request) {
+	        Object payees=payeeService.FindAll(request);
+	        Object ledgerTypes=ledgerTypeRepository.findAllByStatus();
+	        Map<String, Object> result = new HashMap<>();
+	        result.put("payees", payees);
+	        result.put("ledgerTypes", ledgerTypes);
+
+	        ServiceResponse response=new ServiceResponse(true,result);
+	        return  response;
+	    }
+
+	    public ServiceResponse getAllPayee(AgencyRequestDto request) {
+	        Object payees=payeeService.GetAllPayee(request);
+	        Map<String, Object> result = new HashMap<>();
+	        result.put("payees", payees);
+	        ServiceResponse response=new ServiceResponse(true,result);
+	        return  response;
+	    }
 	  
 		
 		/*

@@ -35,5 +35,11 @@ public class JvTreasuryController {
 	        return ResponseEntity.ok().body(
 	                jvService.getAccount(request));
 	    }
+	   
+	    @PostMapping("/getPayee")
+	    public ResponseEntity<?>  getPayee(@Valid @RequestBody AgencyRequestDto request)  {
+	        return ResponseEntity.ok().body(
+	                jvService.getPayee(request));
+	    }
 	
 }

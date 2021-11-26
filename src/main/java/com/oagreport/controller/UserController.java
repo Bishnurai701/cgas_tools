@@ -111,61 +111,62 @@ public class UserController {
 		
 		 
 		
-		  @PostMapping("/MaLePa17") public ResponseEntity<?>
-		  getMaLePa17Report(@Valid @RequestBody ReportRequestModel request) { return
-		  ResponseEntity.ok().body( treasuryReportService.GetMaLePa17Report(request));
-		  }
-		  
-		  @PostMapping("/MaLePa22") public ResponseEntity<?>
-		  getMaLePa22Report(@Valid @RequestBody ReportRequestModel request) { return
-		  ResponseEntity.ok().body( treasuryReportService.GetMaLePa22Report(request));
-		  }
-		  
-		  @PostMapping("/MaLePa208") public ResponseEntity<?>
-		  getMaLePa208Report(@Valid @RequestBody ReportRequestModel request) { return
-		  ResponseEntity.ok().body( treasuryReportService.GetMaLePa208Report(request));
-		  }
-		  
-		  
-		  @PostMapping("/MaLePa209") public ResponseEntity<?>
-		  getMaLePa209Report(@Valid @RequestBody ReportRequestModel request) { return
-		  ResponseEntity.ok().body( treasuryReportService.GetMaLePa209Report(request));
-		  }
-		  
-		  @PostMapping("/MaLePa210") public ResponseEntity<?>
-		  getMaLePa210Report(@Valid @RequestBody ReportRequestModel request) { return
-		  ResponseEntity.ok().body( treasuryReportService.GetMaLePa210Report(request));
-		  }
-		  
-		  @PostMapping("/MaLePa211") public ResponseEntity<?>
-		  getMaLePa211Report(@Valid @RequestBody ReportRequestModel request) { return
-		  ResponseEntity.ok().body( treasuryReportService.GetMaLePa211Report(request));
-		  }
-		  
-		  @PostMapping("/MaLePa213") public ResponseEntity<?>
-		  getMaLePa213Report(@Valid @RequestBody ReportRequestModel request) { return
-		  ResponseEntity.ok().body( treasuryReportService.GetMaLePa213Report(request));
-		  }
-		  
-		  
-		  @PostMapping("/MaLePa214") public ResponseEntity<?>
-		  getMaLePa214Report(@Valid @RequestBody ReportRequestModel request) { return
-		  ResponseEntity.ok().body( treasuryReportService.GetMaLePa214Report(request));
-		  }
-		  
-		  
-		  
-		  //hrisReports
-		  
-		  @PostMapping("/getDeductionReport") public ResponseEntity<?>
-		  getDeductionReport(@Valid @RequestBody ReportRequestModel request) { return
-		  ResponseEntity.ok().body( hrisReportService.getDeductionReport(request)); }
-		  
-		  @PostMapping("/getPaymentDeductionReport") public ResponseEntity<?>
-		  getPaymentDeductionReport(@Valid @RequestBody ReportRequestModel request) {
-		  return ResponseEntity.ok().body(
-		  hrisReportService.getPaymentDeductionReport(request)); }
-		 
-	
+		/*
+		 * @PostMapping("/MaLePa17") public ResponseEntity<?>
+		 * getMaLePa17Report(@Valid @RequestBody ReportRequestModel request) { return
+		 * ResponseEntity.ok().body( treasuryReportService.GetMaLePa17Report(request));
+		 * }
+		 * 
+		 * @PostMapping("/MaLePa22") public ResponseEntity<?>
+		 * getMaLePa22Report(@Valid @RequestBody ReportRequestModel request) { return
+		 * ResponseEntity.ok().body( treasuryReportService.GetMaLePa22Report(request));
+		 * }
+		 * 
+		 * @PostMapping("/MaLePa208") public ResponseEntity<?>
+		 * getMaLePa208Report(@Valid @RequestBody ReportRequestModel request) { return
+		 * ResponseEntity.ok().body( treasuryReportService.GetMaLePa208Report(request));
+		 * }
+		 * 
+		 * 
+		 * @PostMapping("/MaLePa209") public ResponseEntity<?>
+		 * getMaLePa209Report(@Valid @RequestBody ReportRequestModel request) { return
+		 * ResponseEntity.ok().body( treasuryReportService.GetMaLePa209Report(request));
+		 * }
+		 * 
+		 * @PostMapping("/MaLePa210") public ResponseEntity<?>
+		 * getMaLePa210Report(@Valid @RequestBody ReportRequestModel request) { return
+		 * ResponseEntity.ok().body( treasuryReportService.GetMaLePa210Report(request));
+		 * }
+		 * 
+		 * @PostMapping("/MaLePa211") public ResponseEntity<?>
+		 * getMaLePa211Report(@Valid @RequestBody ReportRequestModel request) { return
+		 * ResponseEntity.ok().body( treasuryReportService.GetMaLePa211Report(request));
+		 * }
+		 * 
+		 * @PostMapping("/MaLePa213") public ResponseEntity<?>
+		 * getMaLePa213Report(@Valid @RequestBody ReportRequestModel request) { return
+		 * ResponseEntity.ok().body( treasuryReportService.GetMaLePa213Report(request));
+		 * }
+		 * 
+		 * 
+		 * @PostMapping("/MaLePa214") public ResponseEntity<?>
+		 * getMaLePa214Report(@Valid @RequestBody ReportRequestModel request) { return
+		 * ResponseEntity.ok().body( treasuryReportService.GetMaLePa214Report(request));
+		 * }
+		 * 
+		 * 
+		 * 
+		 * //hrisReports
+		 * 
+		 * @PostMapping("/getDeductionReport") public ResponseEntity<?>
+		 * getDeductionReport(@Valid @RequestBody ReportRequestModel request) { return
+		 * ResponseEntity.ok().body( hrisReportService.getDeductionReport(request)); }
+		 * 
+		 * @PostMapping("/getPaymentDeductionReport") public ResponseEntity<?>
+		 * getPaymentDeductionReport(@Valid @RequestBody ReportRequestModel request) {
+		 * return ResponseEntity.ok().body(
+		 * hrisReportService.getPaymentDeductionReport(request)); }
+		 * 
+		 */
 
 }
